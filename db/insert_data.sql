@@ -1,0 +1,1 @@
+insert into tests_2 (user_name, email) values ($1, $2)
