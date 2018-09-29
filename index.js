@@ -9,7 +9,7 @@ const port = 8080
 app.use(cors())
 app.use(bodyParser.json())
 
-massive('postgres://lterafkrggrvlz:9f8e45e116193e4a8b9b35ef7b8bccfd97f578be0e493fc0e1f8b4a6161ce9a3@ec2-50-16-196-57.compute-1.amazonaws.com:5432/d1ie5otd71r03i?ssl=true')
+massive('your database uri goes here')
     .then(db => {
         app.set('db', db)
         console.log('database is connected')
