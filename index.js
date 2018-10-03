@@ -1,15 +1,18 @@
+require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const massive = require('massive')
 const app = express()
 const port = 8080
+const config = require('./config')
+
 
 
 app.use(cors())
 app.use(bodyParser.json())
 
-massive('your database uri goes here')
+massive(process.env.DATABASE_STRING) // or config.dataBaseString
     .then(db => {
         app.set('db', db)
         console.log('database is connected')
